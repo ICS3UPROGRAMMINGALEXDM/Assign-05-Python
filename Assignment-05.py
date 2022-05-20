@@ -151,8 +151,9 @@ def main():
 
         choice = input(
             "Choose a calculator to use: \n\n"
-            + "1 - Hypotneuse given base and height \n2 - Acceleration given "
+            + "1 - Hypotenuse given base and height \n2 - Acceleration given "
             + "mass and force\n3 - Average speed given distance and time\n\n"
+            + "Selection: "
         )
         # Calls whichever fnction was chosen
         if choice == "1":
