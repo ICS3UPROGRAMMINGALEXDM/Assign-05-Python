@@ -7,6 +7,7 @@
 # hypoteneuse of a right angle triangle given the base and height
 import math
 
+
 # This function calculates the acceleration with the given mass and force
 def calc_acc(force, mass):
     acc = force / mass
