@@ -4,7 +4,8 @@
 # Date: 03/25/2022
 # Description: This assignment I will be making a pogram that either
 # calculates the acceleration given the force and mass or b) calculates the
-# hypotenuse of a right angle triangle given the base and height
+# hypotenuse of a right angle triangle given the base and height or c)
+# calculates teh average speed of a trip given distance and time
 import math
 
 
@@ -92,7 +93,9 @@ def acceleration(acc_unit="m/s^2"):
                 # calling the funciton that will calculate the acceleration
                 answer2 = calc_acc(force_flt, mass_flt)
 
-                print("The resulting acceleration is {:.2f}{}".format(answer2, acc_unit))
+                print(
+                    "The resulting acceleration is {:.2f}{}".format(answer2, acc_unit)
+                )
             else:
                 print("The inputted mass can't be negative")
         except ValueError:
