@@ -4,7 +4,7 @@
 # Date: 03/25/2022
 # Description: This assignment I will be making a pogram that either
 # calculates the acceleration given the force and mass or b) calculates the
-# hypoteneuse of a right angle triangle given the base and height
+# hypotenuse of a right angle triangle given the base and height
 import math
 
 
@@ -15,7 +15,7 @@ def calc_acc(force, mass):
     return acc
 
 
-# This function calulates teh hypoteneuse with the inputted base and height
+# This function calulates teh hypotenuse with the inputted base and height
 def calc_hyp(base, height):
     # calculations
     hyp_sqr = (base**2) + (height**2)
@@ -32,8 +32,8 @@ def calc_speed(time, distance):
 
 
 # This is the function that gets the unit and measurements and will later call
-# another function to make the calculations for the hypoteneuse
-def hypoteneuse():
+# another function to make the calculations for the hypotenuse
+def hypotenuse():
     unit_failure = True
     # Allows to re-enter the unit if it was incorrectly inputted originally
     while unit_failure:
@@ -41,7 +41,7 @@ def hypoteneuse():
         unit = input(
             "Which of the following units would you like to use? " + "(cm, m, mm, km): "
         )
-        # Ensuring a positive number
+        # Ensuring a valid unit
         if (unit == "cm") or (unit == "mm") or (unit == "m") or (unit == "km"):
             measure_failure = True
         else:
@@ -59,11 +59,11 @@ def hypoteneuse():
                 if (base_flt > 0) and (height_flt > 0):
                     measure_failure = False
                     unit_failure = False
-                    # calling the function that will calculate the hhypoteneuse
+                    # calling the function that will calculate the hhypotenuse
                     answer1 = calc_hyp(base_flt, height_flt)
                     # Displays the results
                     print(
-                        "The hypoteneuse of your triangle is {} {}".format(
+                        "The hypotenuse of your triangle is {:.5f} {}".format(
                             answer1, unit
                         )
                     )
@@ -75,7 +75,7 @@ def hypoteneuse():
 
 # This is the function that gets the unit and measurements and will later call
 # another function to make the calculations for the acceleration
-def acceleration(acc_unit="m/s"):
+def acceleration(acc_unit="m/s^2"):
     measure_failure2 = True
     while measure_failure2:
         # getting user input
@@ -92,11 +92,11 @@ def acceleration(acc_unit="m/s"):
                 # calling the funciton that will calculate the acceleration
                 answer2 = calc_acc(force_flt, mass_flt)
 
-                print("The resulting acceleration is {}{}^2".format(answer2, acc_unit))
+                print("The resulting acceleration is {:.2f}{}".format(answer2, acc_unit))
             else:
                 print("The inputted mass can't be negative")
         except ValueError:
-            print("Numbers were entered")
+            print("Numbers entered weren't actual numbers")
 
 
 # This is the function that gets the unit and measurements and will later call
@@ -133,7 +133,7 @@ def speed():
                     answer3 = calc_speed(time_flt, distance_flt)
                     # Display results
                     print(
-                        "The average speed is {}{}/{}".format(
+                        "The average speed is {:.2f}{}/{}".format(
                             answer3, distance_unit, time_unit
                         )
                     )
@@ -158,7 +158,7 @@ def main():
         )
         # Calls whichever fnction was chosen
         if choice == "1":
-            hypoteneuse()
+            hypotenuse()
         elif choice == "2":
             acceleration()
         elif choice == "3":
